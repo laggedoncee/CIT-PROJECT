@@ -1,28 +1,26 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, MapPin, Coffee, Utensils, Calendar, Map, Languages, Wallet, Shield, Compass, Heart } from "lucide-react";
 import { useState, useEffect } from "react";
-import heroImg from "@assets/stock_images/tirana-hero-ai.png";
-import buildingsImg from "@assets/stock_images/tirana-buildings-ai.png";
-import squareImg from "@assets/stock_images/tirana-square-ai.png";
+import heroImg from "@assets/stock_images/tirana-hero.jpg";
+import skanderbegImg from "@assets/stock_images/tirana-square.jpg";
 import mosqueImg from "@assets/stock_images/tirana-mosque.jpg";
-import mountainImg from "@assets/stock_images/tirana-mountain.jpg";
+import dajtiImg from "@assets/stock_images/tirana-dajti.jpg";
+import bunkartImg from "@assets/stock_images/tirana-bunkart.jpg";
+import lakeImg from "@assets/stock_images/tirana-lake.jpg";
+import bllokuImg from "@assets/stock_images/tirana-blloku.jpg";
 import foodImg from "@assets/stock_images/tirana-food.jpg";
 import coffeeImg from "@assets/stock_images/tirana-coffee.jpg";
-import parkImg from "@assets/stock_images/tirana-park.jpg";
-import bllokuImg from "@assets/stock_images/tirana-blloku.jpg";
 
 const IMAGES = {
-  hero: heroImg,
-  colorfulBuildings: buildingsImg,
-  skanderbegSquare: squareImg,
-  mosque: mosqueImg,
-  mountain: mountainImg,
-  bunker: bllokuImg,
-  park: parkImg,
-  blloku: buildingsImg,
+  hero: heroImg, // 1. Hero section
+  skanderbegSquare: skanderbegImg, // 2. Skanderbeg Square
+  mosque: mosqueImg, // 3. Et'hem Bey Mosque
+  mountain: dajtiImg, // 4. Mount Dajti
+  bunker: bunkartImg, // 5. Bunk'Art
+  park: lakeImg, // 6. Artificial Lake
+  blloku: bllokuImg, // 7. Blloku
   food: foodImg,
   coffee: coffeeImg,
-  gallery: squareImg,
 };
 
 export default function Home() {
@@ -147,6 +145,7 @@ export default function Home() {
               </div>
             </motion.div>
             
+            {/* Optionally, you can set a new image for the About section here if you want. Otherwise, remove the old reference. */}
             <motion.div
               className="md:col-span-7 relative h-[600px] md:h-[800px] rounded-2xl overflow-hidden shadow-2xl group"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -155,8 +154,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <img 
-                src={IMAGES.colorfulBuildings}
-                alt="Colorful painted buildings of Tirana" 
+                src={IMAGES.hero}
+                alt="Tirana cityscape" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -198,19 +197,19 @@ export default function Home() {
                 id: "dajti"
               },
               {
-                title: "Bunk'Art Museum",
+                title: "Bunk'Art",
                 desc: "Cold War-era atomic bunkers transformed into powerful underground history and art spaces. One of over 750,000 bunkers built across Albania.",
                 img: IMAGES.bunker,
                 id: "bunkart"
               },
               {
-                title: "The Grand Park",
+                title: "The Artificial Lake",
                 desc: "A 290-hectare oasis with an artificial lake. The lungs of the city — perfect for sunset strolls and picnics.",
                 img: IMAGES.park,
                 id: "grand-park"
               },
               {
-                title: "Blloku District",
+                title: "Blloku",
                 desc: "Once restricted to the Communist elite, now the trendiest neighborhood packed with boutiques, rooftop bars, and cafes.",
                 img: IMAGES.blloku,
                 id: "blloku"
@@ -256,8 +255,8 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl text-accent font-serif mb-12">Local Secrets</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div data-testid="secret-tanners-bridge">
-                <h3 className="text-2xl font-serif text-primary mb-3">Tanners' Bridge</h3>
-                <p className="text-foreground/80 font-light leading-relaxed">Tucked away in the modern suburbs, this 18th-century Ottoman stone bridge (Tabak Bridge) is a rare survivor of the city's ancient trade routes. It feels completely out of time amid the high-rises.</p>
+                <h3 className="text-2xl font-serif text-primary mb-3">"Ura e Tabakëve"</h3>
+                <p className="text-foreground/80 font-light leading-relaxed">Tucked away in the modern suburbs, this 18th-century Ottoman stone bridge (Ura e Tabakëve) is a rare survivor of the city's ancient trade routes. It feels completely out of time amid the high-rises.</p>
               </div>
               <div data-testid="secret-pyramid">
                 <h3 className="text-2xl font-serif text-primary mb-3">The Pyramid of Tirana</h3>
@@ -268,7 +267,7 @@ export default function Home() {
                 <p className="text-foreground/80 font-light leading-relaxed">Built with Soviet assistance in the 1960s, this grand Soviet-era venue houses the National Theatre of Opera and Ballet. Catch a performance for €5-15 — extraordinary value for world-class art.</p>
               </div>
               <div data-testid="secret-new-bazaar">
-                <h3 className="text-2xl font-serif text-primary mb-3">New Bazaar</h3>
+                <h3 className="text-2xl font-serif text-primary mb-3">"Pazari i Ri"</h3>
                 <p className="text-foreground/80 font-light leading-relaxed">The recently renovated New Bazaar (Pazari i Ri) is where locals shop. Fruits, spices, cheeses, olives — the smells and colors are overwhelming in the best possible way. Go before 9am.</p>
               </div>
             </div>
@@ -336,34 +335,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Immersive Gallery Moment */}
-      <section className="relative h-[65vh] bg-black overflow-hidden" data-testid="section-gallery">
-        <motion.div 
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.05 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
-        >
-          <img 
-            src={IMAGES.gallery}
-            alt="The Et'hem Bey Mosque, Tirana" 
-            className="w-full h-full object-cover opacity-70"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/60" />
-        </motion.div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.h2 
-            className="text-5xl md:text-8xl text-white font-serif tracking-widest text-center px-4 drop-shadow-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            History <br/><span className="text-secondary italic">Illuminated</span>
-          </motion.h2>
-        </div>
-      </section>
+
 
       {/* Practical Info */}
       <section id="practical" className="py-24 md:py-40 bg-accent text-accent-foreground px-6 relative overflow-hidden" data-testid="section-practical">
@@ -381,7 +353,7 @@ export default function Home() {
               { icon: Calendar, title: "When to Go", desc: "April–June and September–October offer mild weather and fewer crowds.", id: "when" },
               { icon: MapPin, title: "Getting There", desc: "Fly into Nënë Tereza International Airport (TIA), 17km from the city center.", id: "flight" },
               { icon: Wallet, title: "Budget", desc: "Lek (ALL) is the currency — €1 ≈ 123 ALL. Budget €30–40/day and live extremely well.", id: "budget" },
-              { icon: Languages, title: "Language", desc: "Albanian is a unique Indo-European language unrelated to any other. English is widely spoken in Blloku.", id: "language" },
+              { icon: Languages, title: "Language", desc: "Albanian is a unique Indo-European language unrelated to any other.", id: "language" },
             ].map((item, i) => (
               <motion.div 
                 key={i}
@@ -409,7 +381,7 @@ export default function Home() {
               <Shield className="w-16 h-16 text-primary shrink-0" />
               <div>
                 <h3 className="text-3xl font-serif mb-3 text-white">Safety and Hospitality</h3>
-                <p className="text-white/80 font-light leading-relaxed text-lg">Tirana is proudly one of the safest capitals in Europe. The Albanian code of Besa dictates that guests must be treated with the utmost respect and protection. You will find locals extraordinarily hospitable — expect raki and coffee pressed into your hands before you've even sat down.</p>
+                <p className="text-white/80 font-light leading-relaxed text-lg">Tirana is proudly one of the safest capitals in Europe. You will find locals extraordinarily hospitable — expect raki and coffee pressed into your hands before you've even sat down.</p>
               </div>
             </motion.div>
           </div>
@@ -430,7 +402,7 @@ export default function Home() {
           </motion.h2>
           <p className="text-2xl text-muted-foreground mb-12 font-light italic">See you in Tirana.</p>
           <div className="h-px w-24 bg-secondary mx-auto mb-12" />
-          <p className="text-sm text-foreground/40 tracking-widest uppercase">A cinematic guide to Albania's vibrant capital.</p>
+          <p className="text-sm text-foreground/40 tracking-widest uppercase">Made by Fabio Trako, Fabjo Rusheku and Erik Dhimitri.</p>
         </div>
       </footer>
     </div>

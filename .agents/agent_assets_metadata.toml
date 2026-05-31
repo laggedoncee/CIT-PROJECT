@@ -1,0 +1,67 @@
+uploads = []
+
+[[generated]]
+id = "wnb8SpwzsDn15KBVvj1mF"
+uri = "file://attached_assets/stock_images/tirana-hero-ai.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "adsIYbwntQqX9va8LG9lk"
+uri = "file://attached_assets/stock_images/tirana-buildings-ai.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "x6Vgvyg16BblD8B7kuNfU"
+uri = "file://attached_assets/stock_images/tirana-square-ai.png"
+type = "image"
+title = "generated_image"
+
+[[outputs]]
+id = "eM5_Jinz55VGF0sPQdfp-"
+uri = "file://attached_assets/stock_images/tirana-mosque.jpg"
+type = "image"
+title = "ornate Ottoman mosque interior architecture golden light"
+
+[[outputs]]
+id = "-Xx3mK4UKH2mU2_0dvigb"
+uri = "file://attached_assets/stock_images/tirana-buildings.jpg"
+type = "image"
+title = "Albania Tirana colorful painted apartment buildings"
+
+[[outputs]]
+id = "wy9Pf3AFXPS0oZod2y5rP"
+uri = "file://attached_assets/stock_images/tirana-hero.jpg"
+type = "image"
+title = "Tirana Albania city panorama aerial view colorful buildings"
+
+[[outputs]]
+id = "WQE0u3Q6c_BQPzp7UF4p8"
+uri = "file://attached_assets/stock_images/tirana-mountain.jpg"
+type = "image"
+title = "mountain cable car gondola alpine landscape panoramic"
+
+[[outputs]]
+id = "7oTvhQrSXXE1UYN4KFTSZ"
+uri = "file://attached_assets/stock_images/tirana-food.jpg"
+type = "image"
+title = "Mediterranean Balkan food spread lamb bread pastry"
+
+[[outputs]]
+id = "9SmEUxmv9K4J2sLvzrb2S"
+uri = "file://attached_assets/stock_images/tirana-park.jpg"
+type = "image"
+title = "city park lake reflecting sunset urban"
+
+[[outputs]]
+id = "rGr0P55eBBdhIm_e2Naau"
+uri = "file://attached_assets/stock_images/tirana-blloku.jpg"
+type = "image"
+title = "Tirana Albania street art murals colorful urban"
+
+[[outputs]]
+id = "L8yU2ZBCYEvt6vXptnrCs"
+uri = "file://attached_assets/stock_images/tirana-coffee.jpg"
+type = "image"
+title = "European outdoor cafe espresso coffee street"
